@@ -28,6 +28,21 @@ jobs:
       - name: Regenerar el proyecto Xcode
         run: python3 Tools/generar_xcodeproj.py
 
+      - name: Comprobar que cada ruta del proyecto existe
+        run: |
+          python3 - <<'PY'
+          import os, re
+          raiz = os.path.dirname(os.path.abspath("Bodega.xcodeproj/project.pbxproj"))
+          texto = open("Bodega.xcodeproj/project.pbxproj", encoding="utf-8").read()
+          rutas = set(re.findall(r'path = ([^;]+); sourceTree = SOURCE_ROOT;', texto))
+          faltan = [r for r in rutas if not os.path.exists(os.path.join(raiz, r))]
+          print(f"  rutas referenciadas: {len(rutas)}")
+          if faltan:
+              print("  ✖️  no existen:", faltan)
+              raise SystemExit(1)
+          print("  ✓ todas las rutas existen")
+          PY
+
       - name: Compilar (sin firmar)
         run: |
           xcodebuild \
@@ -67,7 +82,15 @@ jobs:
           name: Bodega para iPhone
           body: |
             App de inventario para la bodega, compilada sin firmar.
-            Se instala con Sideloadly o AltStore usando tu cuenta de Apple gratuita.
+
+            **En el iPhone (sin Mac y sin Xcode):**
+            1. Instala SideStore desde el App Store.
+            2. SideStore > Sources > Add Source > pega:
+               https://raw.githubusercontent.com/crisbagu/bodega-inventario-ios/main/Sitio/fuente.json
+            3. Toca Bodega > + > Install.
+
+            **Desde la Mac:** Sideloadly o AltStore con tu Apple ID.
+            La app se firma con tu cuenta gratuita: dura 7 dias.
           files: Bodega-unsigned.ipa
           draft: false
           prerelease: false

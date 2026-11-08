@@ -5,6 +5,7 @@ on:
     branches: [main]
     paths:
       - 'Sitio/**'
+      - '.github/workflows/pages.yml'
   workflow_dispatch:
 
 permissions:
@@ -34,7 +35,10 @@ jobs:
           sed -i "s|{{ENLACE_REPO}}|https://github.com/$REPO|g" Sitio/instalar.html
           grep -o '{{[A-Z_]*}}' Sitio/instalar.html || echo "  (sin marcadores sin sustituir)"
 
-      - uses: actions/configure-pages@v5
+      - name: Habilitar Pages si no lo esta
+        uses: actions/configure-pages@v5
+        with:
+          enablement: true
 
       - uses: actions/upload-pages-artifact@v3
         with:

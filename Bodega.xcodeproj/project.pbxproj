@@ -53,39 +53,39 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		CF545FDCCA7DC691533E4069 /* BodegaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BodegaApp.swift; sourceTree = "<group>"; };
-		3D19ACB00FEE8AEA5B7B023F /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
-		4FD678C13962F651892CB069 /* Catalogo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Catalogo.swift; sourceTree = "<group>"; };
-		FC886CDB17B56258EFC7D90D /* DatosSemilla.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatosSemilla.swift; sourceTree = "<group>"; };
-		FD12961ED1AFCF8A30D483DF /* Modelos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Modelos.swift; sourceTree = "<group>"; };
-		61D34D8906B470D430C823AB /* Preferencias.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Preferencias.swift; sourceTree = "<group>"; };
-		1CA4C20F91A4A605254031A6 /* TiposCompartidos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TiposCompartidos.swift; sourceTree = "<group>"; };
-		40062E97C0E0F0F27C926BF1 /* Unidades.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Unidades.swift; sourceTree = "<group>"; };
-		CECF1B48479BE28FC2AF3CD4 /* AlmacenFotos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlmacenFotos.swift; sourceTree = "<group>"; };
-		5AEC77697D7942B97146FFA0 /* Exportador.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exportador.swift; sourceTree = "<group>"; };
-		2E8025F711690CF021933D43 /* Inventario.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Inventario.swift; sourceTree = "<group>"; };
-		EA6083782E0A5F7F7AE2F87C /* Respaldo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Respaldo.swift; sourceTree = "<group>"; };
-		832D1B5EF2577429450499F0 /* Retroalimentacion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Retroalimentacion.swift; sourceTree = "<group>"; };
-		0246E535C8A2A6C0F158A48E /* AjustesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AjustesView.swift; sourceTree = "<group>"; };
-		8405254E2948059D0132C408 /* CapturaFotoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CapturaFotoView.swift; sourceTree = "<group>"; };
-		8BA987832287F91DC1D19F79 /* CategoriasView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriasView.swift; sourceTree = "<group>"; };
-		2A624520729BDF37B9D2A09D /* Componentes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Componentes.swift; sourceTree = "<group>"; };
-		8243FE15D14577757660D1D1 /* ConfirmacionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmacionView.swift; sourceTree = "<group>"; };
-		0BA9DF982304E2D9117E31AB /* DesignSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignSystem.swift; sourceTree = "<group>"; };
-		E673D5FEC1B80A9D161BF4D4 /* DetalleProductoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetalleProductoView.swift; sourceTree = "<group>"; };
-		A057CDAAA03620981C231CA3 /* GaleriaFotosView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GaleriaFotosView.swift; sourceTree = "<group>"; };
-		C91FDD0EAEF58DCD14D6B79E /* InicioView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InicioView.swift; sourceTree = "<group>"; };
-		F5297DC5D739720323836612 /* ListaProductosView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListaProductosView.swift; sourceTree = "<group>"; };
-		38A18FDEB6C53950AE26B286 /* MovimientosView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovimientosView.swift; sourceTree = "<group>"; };
-		68A1AB10321F1AB31C95FF9D /* ReportesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportesView.swift; sourceTree = "<group>"; };
-		61682DFB78FEBB16CFEAA884 /* UsuariosView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsuariosView.swift; sourceTree = "<group>"; };
-		16BC3CDB53E94002B6A525AD /* Barras.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Barras.swift; sourceTree = "<group>"; };
-		F9C65CAA26867B71B01CA4AE /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
-		8F63027AA2528BAEC673389F /* MotorCoincidencia.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotorCoincidencia.swift; sourceTree = "<group>"; };
-		D30E71B9F9CE7EFC7C2B3BC8 /* OCR.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OCR.swift; sourceTree = "<group>"; };
-		BD632A8F8797D29D4D14933B /* Visual.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Visual.swift; sourceTree = "<group>"; };
-		652FFDB053A1FB1E2B89C697 /* OCRTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OCRTests.swift; sourceTree = "<group>"; };
-		156C1E5A095B98A02BBAA581 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CF545FDCCA7DC691533E4069 /* BodegaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bodega/App/BodegaApp.swift; sourceTree = SOURCE_ROOT; };
+		3D19ACB00FEE8AEA5B7B023F /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bodega/App/RootView.swift; sourceTree = SOURCE_ROOT; };
+		4FD678C13962F651892CB069 /* Catalogo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bodega/Core/Catalogo.swift; sourceTree = SOURCE_ROOT; };
+		FC886CDB17B56258EFC7D90D /* DatosSemilla.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bodega/Core/DatosSemilla.swift; sourceTree = SOURCE_ROOT; };
+		FD12961ED1AFCF8A30D483DF /* Modelos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bodega/Core/Modelos.swift; sourceTree = SOURCE_ROOT; };
+		61D34D8906B470D430C823AB /* Preferencias.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bodega/Core/Preferencias.swift; sourceTree = SOURCE_ROOT; };
+		1CA4C20F91A4A605254031A6 /* TiposCompartidos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bodega/Core/TiposCompartidos.swift; sourceTree = SOURCE_ROOT; };
+		40062E97C0E0F0F27C926BF1 /* Unidades.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bodega/Core/Unidades.swift; sourceTree = SOURCE_ROOT; };
+		CECF1B48479BE28FC2AF3CD4 /* AlmacenFotos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bodega/Services/AlmacenFotos.swift; sourceTree = SOURCE_ROOT; };
+		5AEC77697D7942B97146FFA0 /* Exportador.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bodega/Services/Exportador.swift; sourceTree = SOURCE_ROOT; };
+		2E8025F711690CF021933D43 /* Inventario.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bodega/Services/Inventario.swift; sourceTree = SOURCE_ROOT; };
+		EA6083782E0A5F7F7AE2F87C /* Respaldo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bodega/Services/Respaldo.swift; sourceTree = SOURCE_ROOT; };
+		832D1B5EF2577429450499F0 /* Retroalimentacion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bodega/Services/Retroalimentacion.swift; sourceTree = SOURCE_ROOT; };
+		0246E535C8A2A6C0F158A48E /* AjustesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bodega/UI/AjustesView.swift; sourceTree = SOURCE_ROOT; };
+		8405254E2948059D0132C408 /* CapturaFotoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bodega/UI/CapturaFotoView.swift; sourceTree = SOURCE_ROOT; };
+		8BA987832287F91DC1D19F79 /* CategoriasView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bodega/UI/CategoriasView.swift; sourceTree = SOURCE_ROOT; };
+		2A624520729BDF37B9D2A09D /* Componentes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bodega/UI/Componentes.swift; sourceTree = SOURCE_ROOT; };
+		8243FE15D14577757660D1D1 /* ConfirmacionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bodega/UI/ConfirmacionView.swift; sourceTree = SOURCE_ROOT; };
+		0BA9DF982304E2D9117E31AB /* DesignSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bodega/UI/DesignSystem.swift; sourceTree = SOURCE_ROOT; };
+		E673D5FEC1B80A9D161BF4D4 /* DetalleProductoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bodega/UI/DetalleProductoView.swift; sourceTree = SOURCE_ROOT; };
+		A057CDAAA03620981C231CA3 /* GaleriaFotosView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bodega/UI/GaleriaFotosView.swift; sourceTree = SOURCE_ROOT; };
+		C91FDD0EAEF58DCD14D6B79E /* InicioView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bodega/UI/InicioView.swift; sourceTree = SOURCE_ROOT; };
+		F5297DC5D739720323836612 /* ListaProductosView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bodega/UI/ListaProductosView.swift; sourceTree = SOURCE_ROOT; };
+		38A18FDEB6C53950AE26B286 /* MovimientosView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bodega/UI/MovimientosView.swift; sourceTree = SOURCE_ROOT; };
+		68A1AB10321F1AB31C95FF9D /* ReportesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bodega/UI/ReportesView.swift; sourceTree = SOURCE_ROOT; };
+		61682DFB78FEBB16CFEAA884 /* UsuariosView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bodega/UI/UsuariosView.swift; sourceTree = SOURCE_ROOT; };
+		16BC3CDB53E94002B6A525AD /* Barras.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bodega/Vision/Barras.swift; sourceTree = SOURCE_ROOT; };
+		F9C65CAA26867B71B01CA4AE /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bodega/Vision/Color.swift; sourceTree = SOURCE_ROOT; };
+		8F63027AA2528BAEC673389F /* MotorCoincidencia.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bodega/Vision/MotorCoincidencia.swift; sourceTree = SOURCE_ROOT; };
+		D30E71B9F9CE7EFC7C2B3BC8 /* OCR.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bodega/Vision/OCR.swift; sourceTree = SOURCE_ROOT; };
+		BD632A8F8797D29D4D14933B /* Visual.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bodega/Vision/Visual.swift; sourceTree = SOURCE_ROOT; };
+		652FFDB053A1FB1E2B89C697 /* OCRTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BodegaTests/OCRTests.swift; sourceTree = SOURCE_ROOT; };
+		156C1E5A095B98A02BBAA581 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Bodega/Resources/Assets.xcassets; sourceTree = SOURCE_ROOT; };
 		84337AD8D27FCD69AF2C4FC2 /* Bodega.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bodega.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5A2BEBE86215B3F6D160426 /* BodegaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BodegaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -109,16 +109,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		C3DFDBB5E478073A94A7BA2B /* App */ = {
+		01380259422488898C39337E /* App */ = {
 			isa = PBXGroup;
 			children = (
 			CF545FDCCA7DC691533E4069 /* BodegaApp.swift */,
 			3D19ACB00FEE8AEA5B7B023F /* RootView.swift */,
 			);
-			path = App;
+			name = App;
 			sourceTree = "<group>";
 		};
-		A1C2F14DE9EB30BCF902C415 /* Core */ = {
+		80508C717AB4602663E39A50 /* Core */ = {
 			isa = PBXGroup;
 			children = (
 			4FD678C13962F651892CB069 /* Catalogo.swift */,
@@ -128,18 +128,18 @@
 			1CA4C20F91A4A605254031A6 /* TiposCompartidos.swift */,
 			40062E97C0E0F0F27C926BF1 /* Unidades.swift */,
 			);
-			path = Core;
+			name = Core;
 			sourceTree = "<group>";
 		};
-		660E72E626EB92719130325C /* Resources */ = {
+		23EE24EEAEC182E9586755C0 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
 			156C1E5A095B98A02BBAA581 /* Assets.xcassets */,
 			);
-			path = Resources;
+			name = Resources;
 			sourceTree = "<group>";
 		};
-		A9060D43A69B77613CE0CF4F /* Services */ = {
+		A4BA1F1B6EA7C34C406F1F44 /* Services */ = {
 			isa = PBXGroup;
 			children = (
 			CECF1B48479BE28FC2AF3CD4 /* AlmacenFotos.swift */,
@@ -148,10 +148,10 @@
 			EA6083782E0A5F7F7AE2F87C /* Respaldo.swift */,
 			832D1B5EF2577429450499F0 /* Retroalimentacion.swift */,
 			);
-			path = Services;
+			name = Services;
 			sourceTree = "<group>";
 		};
-		3E654694FCC3C63A90EC3670 /* UI */ = {
+		12A30CB858DE7167F81D4966 /* UI */ = {
 			isa = PBXGroup;
 			children = (
 			0246E535C8A2A6C0F158A48E /* AjustesView.swift */,
@@ -168,10 +168,10 @@
 			68A1AB10321F1AB31C95FF9D /* ReportesView.swift */,
 			61682DFB78FEBB16CFEAA884 /* UsuariosView.swift */,
 			);
-			path = UI;
+			name = UI;
 			sourceTree = "<group>";
 		};
-		5A9FBD79348990398B6F6896 /* Vision */ = {
+		D73805DCBCED28317485CCC1 /* Vision */ = {
 			isa = PBXGroup;
 			children = (
 			16BC3CDB53E94002B6A525AD /* Barras.swift */,
@@ -180,44 +180,28 @@
 			D30E71B9F9CE7EFC7C2B3BC8 /* OCR.swift */,
 			BD632A8F8797D29D4D14933B /* Visual.swift */,
 			);
-			path = Vision;
-			sourceTree = "<group>";
-		};
-		D441B4FF11626F4589FB2FEB /* Bodega */ = {
-			isa = PBXGroup;
-			children = (
-			C3DFDBB5E478073A94A7BA2B /* App */,
-			A1C2F14DE9EB30BCF902C415 /* Core */,
-			660E72E626EB92719130325C /* Resources */,
-			A9060D43A69B77613CE0CF4F /* Services */,
-			3E654694FCC3C63A90EC3670 /* UI */,
-			5A9FBD79348990398B6F6896 /* Vision */,
-			);
-			path = Bodega;
+			name = Vision;
 			sourceTree = "<group>";
 		};
 		4FF1891845CEA6C85C36F846 /* Bodega */ = {
 			isa = PBXGroup;
 			children = (
-			D441B4FF11626F4589FB2FEB /* Bodega */,
+			01380259422488898C39337E /* App */,
+			80508C717AB4602663E39A50 /* Core */,
+			23EE24EEAEC182E9586755C0 /* Resources */,
+			A4BA1F1B6EA7C34C406F1F44 /* Services */,
+			12A30CB858DE7167F81D4966 /* UI */,
+			D73805DCBCED28317485CCC1 /* Vision */,
 			);
-			path = Bodega;
-			sourceTree = "<group>";
-		};
-		E144601D7F492119071706A5 /* BodegaTests */ = {
-			isa = PBXGroup;
-			children = (
-			652FFDB053A1FB1E2B89C697 /* OCRTests.swift */,
-			);
-			path = BodegaTests;
+			name = Bodega;
 			sourceTree = "<group>";
 		};
 		C12DE6F28CEDB309DFF4FA1C /* BodegaTests */ = {
 			isa = PBXGroup;
 			children = (
-			E144601D7F492119071706A5 /* BodegaTests */,
+			652FFDB053A1FB1E2B89C697 /* OCRTests.swift */,
 			);
-			path = BodegaTests;
+			name = BodegaTests;
 			sourceTree = "<group>";
 		};
 		7C77A872663E888729B302C0 = {

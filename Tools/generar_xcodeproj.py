@@ -74,29 +74,40 @@ def main():
 
     # ---------------------------------------------------------------- groups
     # Estructura: root -> Bodega (App/Core/Vision/Services/UI/Resources), BodegaTests, Products
-    def group_tree(paths, prefix):
-        """paths: lista de rutas relativas; devuelve (nombre -> [hijos])"""
+    #
+    # IMPORTANTE: los grupos son "virtuales" (tienen name, no path) y los ficheros
+    # usan sourceTree = SOURCE_ROOT con su ruta completa desde la raiz del proyecto.
+    # Asi la ruta real nunca se duplica (el fallo clasico "Bodega/Bodega/...").
+    def group_tree(entries):
+        """entries: lista de (ruta_relativa_al_grupo, ruta_completa_desde_RAIZ)."""
         tree = {}
-        for p in paths:
-            parts = p.split(os.sep)
+        for group_rel, full in entries:
+            parts = group_rel.split(os.sep)
             node = tree
             for part in parts[:-1]:
                 node = node.setdefault(part, {})
-            node.setdefault("__files__", []).append(p)
+            node.setdefault("__files__", []).append(full)
         return tree
 
-    app_tree = group_tree([rel(p) for p in swift_app] + [rel(a) for a in assets], "Bodega")
-    test_tree = group_tree([rel(p) for p in swift_tests], TEST_NAME)
+    APP_DIR = os.path.join(ROOT, "Bodega")
+    TEST_DIR = os.path.join(ROOT, TEST_NAME)
+
+    app_entries = [(os.path.relpath(p, APP_DIR), rel(p)) for p in swift_app]
+    app_entries += [(os.path.relpath(a, APP_DIR), rel(a)) for a in assets]
+    test_entries = [(os.path.relpath(p, TEST_DIR), rel(p)) for p in swift_tests]
+
+    app_tree = group_tree(app_entries)
+    test_tree = group_tree(test_entries)
 
     group_uuids = {}
 
     def emit_groups(tree, parent_key, path_prefix):
-        """Crea PBXGroup y devuelve uuid del grupo racine."""
+        """Crea PBXGroup (virtual: name, sin path) y devuelve uuid del grupo racine."""
         children = []
         for name in sorted(k for k in tree if k != "__files__"):
             sub = tree[name]
             child_prefix = os.path.join(path_prefix, name) if path_prefix else name
-            uid_child = emit_groups(sub, child_key := f"{parent_key}/{name}", child_prefix)
+            uid_child = emit_groups(sub, f"{parent_key}/{name}", child_prefix)
             children.append((uid_child, name))
         files = sorted(tree.get("__files__", []))
         file_children = []
@@ -114,11 +125,12 @@ def main():
         for fid, name in file_children:
             kids.append(f"\t\t\t{fid} /* {name} */,")
         kids_str = "\n".join(kids)
+        label = os.path.basename(parent_key) or parent_key
         groups_blocks.append(
-            f"\t\t{g} /* {os.path.basename(parent_key) or parent_key} */ = {{\n"
+            f"\t\t{g} /* {label} */ = {{\n"
             f"\t\t\tisa = PBXGroup;\n"
             f"\t\t\tchildren = (\n{kids_str}\n\t\t\t);\n"
-            f"\t\t\tpath = {os.path.basename(parent_key) or parent_key};\n"
+            f"\t\t\tname = {label};\n"
             f"\t\t\tsourceTree = \"<group>\";\n"
             f"\t\t}};\n"
         )
@@ -129,16 +141,18 @@ def main():
     test_root = emit_groups(test_tree, TEST_NAME, TEST_NAME)
 
     # ------------------------------------------------------- file references
+    # Las rutas son completas desde la raiz del proyecto (SOURCE_ROOT), asi que
+    # el grupo donde cuelgan no altera la ruta real que ve Xcode.
     fileref_blocks = []
     for r, u in sorted(filerefs.items()):
         fileref_blocks.append(
             f"\t\t{u} /* {os.path.basename(r)} */ = {{isa = PBXFileReference; "
-            f"lastKnownFileType = {file_type(r)}; path = {os.path.basename(r)}; sourceTree = \"<group>\"; }};\n"
+            f"lastKnownFileType = {file_type(r)}; path = {r}; sourceTree = SOURCE_ROOT; }};\n"
         )
     for r, u in sorted(asset_refs.items()):
         fileref_blocks.append(
             f"\t\t{u} /* {os.path.basename(r)} */ = {{isa = PBXFileReference; "
-            f"lastKnownFileType = {file_type(r)}; path = {os.path.basename(r)}; sourceTree = \"<group>\"; }};\n"
+            f"lastKnownFileType = {file_type(r)}; path = {r}; sourceTree = SOURCE_ROOT; }};\n"
         )
 
     # ----------------------------------------------------------- build files
@@ -569,6 +583,19 @@ def main():
 
     print(f"Proyecto generado: {PBXPROJ}")
     print(f"  fuentes app: {len(app_sources)}  |  tests: {len(test_sources)}  |  recursos: {len(app_resources)}")
+
+    # Verificacion: cada fichero referenciado debe existir en disco con esa ruta exacta.
+    # Asi se detecta el fallo "Bodega/Bodega/..." sin necesidad de Xcode.
+    problemas = []
+    for r in list(filerefs) + list(asset_refs):
+        if not os.path.exists(os.path.join(ROOT, r)):
+            problemas.append(r)
+    if problemas:
+        print("  ✖️  Rutas que NO existen en disco:")
+        for p in sorted(problemas):
+            print(f"      - {p}")
+        raise SystemExit(1)
+    print(f"  rutas verificadas en disco: {len(filerefs) + len(asset_refs)} (todas correctas)")
 
 
 def escribir_esquemas(app_target, test_target):
