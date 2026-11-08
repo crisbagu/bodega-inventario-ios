@@ -32,7 +32,7 @@ jobs:
         run: |
           python3 - <<'PY'
           import os, re
-          raiz = os.path.dirname(os.path.abspath("Bodega.xcodeproj/project.pbxproj"))
+          raiz = os.getcwd()
           texto = open("Bodega.xcodeproj/project.pbxproj", encoding="utf-8").read()
           rutas = set(re.findall(r'path = ([^;]+); sourceTree = SOURCE_ROOT;', texto))
           faltan = [r for r in rutas if not os.path.exists(os.path.join(raiz, r))]
