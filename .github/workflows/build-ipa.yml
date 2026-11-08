@@ -1,0 +1,69 @@
+name: Compilar IPA para iPhone
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths-ignore:
+      - '**/*.md'
+
+jobs:
+  compilar:
+    name: Compilar la app para iPhone
+    runs-on: macos-14
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Elegir Xcode 16
+        run: |
+          sudo xcode-select -s /Applications/Xcode_16.app
+          xcodebuild -version
+
+      - name: Regenerar el proyecto Xcode
+        run: python3 Tools/generar_xcodeproj.py
+
+      - name: Compilar (sin firmar)
+        run: |
+          xcodebuild \
+            -project Bodega.xcodeproj \
+            -scheme Bodega \
+            -configuration Release \
+            -sdk iphoneos \
+            -destination 'generic/platform=iOS' \
+            -derivedDataPath build \
+            CODE_SIGNING_ALLOWED=NO \
+            CODE_SIGNING_REQUIRED=NO \
+            CODE_SIGN_IDENTITY="" \
+            build
+
+      - name: Empaquetar el .ipa
+        run: |
+          APP=build/Build/Products/Release-iphoneos/Bodega.app
+          test -d "$APP"
+          rm -rf Payload && mkdir -p Payload
+          cp -R "$APP" Payload/
+          # El .ipa es el .app dentro de una carpeta Payload (formato estándar).
+          zip -qr Bodega-unsigned.ipa Payload
+          unzip -l Bodega-unsigned.ipa | head -20
+          ls -lh Bodega-unsigned.ipa
+
+      - name: Subir el .ipa como artefacto
+        uses: actions/upload-artifact@v4
+        with:
+          name: Bodega-unsigned
+          path: Bodega-unsigned.ipa
+
+      - name: Publicar la descarga
+        if: github.ref == 'refs/heads/main'
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: app
+          name: Bodega para iPhone
+          body: |
+            App de inventario para la bodega, compilada sin firmar.
+            Se instala con Sideloadly o AltStore usando tu cuenta de Apple gratuita.
+          files: Bodega-unsigned.ipa
+          draft: false
+          prerelease: false
