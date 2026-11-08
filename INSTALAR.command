@@ -3,7 +3,7 @@
 # No necesitas Xcode. La firma la hace tu cuenta de Apple gratuita (dura 7 días).
 
 set -u
-URL_IPA="{{URL_IPA}}"
+URL_IPA="https://github.com/crisbagu/bodega-inventario-ios/releases/download/app/Bodega-unsigned.ipa"
 DESTINO="$HOME/Descargas"
 NOMBRE="Bodega-unsigned.ipa"
 
@@ -19,7 +19,6 @@ if [ ! -f "$URL_IPA" ]; then
   read -r -p "  Pulsa Intro para cerrar." _
   exit 1
 fi
-
 mkdir -p "$DESTINO"
 echo "  ⬇️  Descargando la app…"
 if ! curl -fL --progress-bar -o "$DESTINO/$NOMBRE" "$URL_IPA"; then

@@ -1,0 +1,22 @@
+{
+  "apps": [
+    {
+      "name": "Bodega",
+      "bundleID": "com.local.bodega",
+      "icon": "https://github.com/crisbagu/bodega-inventario-ios/raw/main/Sitio/icono.png",
+      "versions": [
+        {
+          "version": "1.0",
+          "url": "https://github.com/crisbagu/bodega-inventario-ios/releases/download/app/Bodega-unsigned.ipa",
+          "changelog": "Primera version de la app de inventario para la bodega."
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "name": "Bodega (repo oficial)",
+      "URL": "https://raw.githubusercontent.com/crisbagu/bodega-inventario-ios/main/Sitio/fuente.json"
+    }
+  ]
+}

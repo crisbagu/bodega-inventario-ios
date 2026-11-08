@@ -12,6 +12,10 @@ permissions:
   pages: write
   id-token: write
 
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
 jobs:
   publicar:
     runs-on: ubuntu-latest
@@ -21,9 +25,14 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Sustituir los enlaces del repo
+      - name: Poner los enlaces reales de descarga
+        env:
+          REPO: ${{ github.repository }}
         run: |
-          sed -i "s|{{REPO}}|${{ github.repository }}|g" Sitio/instalar.html
+          sed -i "s|{{REPO}}|$REPO|g" Sitio/instalar.html
+          sed -i "s|{{DESCARGA_IPA}}|https://github.com/$REPO/releases/download/app/Bodega-unsigned.ipa|g" Sitio/instalar.html
+          sed -i "s|{{ENLACE_REPO}}|https://github.com/$REPO|g" Sitio/instalar.html
+          grep -o '{{[A-Z_]*}}' Sitio/instalar.html || echo "  (sin marcadores sin sustituir)"
 
       - uses: actions/configure-pages@v5
 

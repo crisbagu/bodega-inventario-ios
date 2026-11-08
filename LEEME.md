@@ -8,25 +8,39 @@ nube, sin cuentas, sin suscripciones.
 
 ## 1. Cómo instalarla en tu iPhone (una sola vez)
 
-El proyecto está en el **Escritorio**: `BodegaApp` (copia idéntica en
-`/Users/cristiandavid/OpenBot/Shared/BodegaApp`).
+Todo está publicado en GitHub: **https://github.com/crisbagu/bodega-inventario-ios**
 
-Necesitas **Xcode 16 o superior** (gratis en la Mac App Store).
+El archivo compilado está en la sección **Releases** → *app* → `Bodega-unsigned.ipa`.
+La página de instalación con los pasos está en
+**https://crisbagu.github.io/bodega-inventario-ios/**
 
-1. Abre `BodegaApp/Bodega.xcodeproj` con Xcode.
-2. En la barra superior, elige el destino **tu iPhone** (conectado por cable).
-3. Ve a la pestaña **Signing & Capabilities** del target `Bodega`:
-   - marca **Automatically manage signing**,
-   - en **Team**, elige tu cuenta de Apple (basta con la cuenta gratuita).
-   - cambia el **Bundle Identifier** a algo único tuyo, por ejemplo
-     `com.tunombre.bodega` (Xcode avisa si ya existe; es normal).
-4. Pulsa **Run** (▶). Xcode instalará la app en el iPhone y la abrirá.
-5. La primera vez, el iPhone pedirá permiso de **cámara**: acepta.
+### Opción A · Solo el iPhone (sin Mac, sin Xcode) — la recomendada
+
+1. Instala **SideStore** desde el App Store.
+2. En SideStore: **⋮ → Sources → Add Source**, y pega:
+   `https://raw.githubusercontent.com/crisbagu/bodega-inventario-ios/main/Sitio/fuente.json`
+3. Toca **Bodega** → **+** → **Install**. SideStore firma con tu cuenta de Apple y la instala.
+4. La primera vez, activa el **Modo desarrollador**: Ajustes → Privacidad y seguridad → Modo desarrollador.
+
+### Opción B · Sideloadly o AltStore en la Mac
+
+1. Descarga el `.ipa` desde el enlace de arriba.
+2. **Sideloadly**: arrastra el archivo → tu Apple ID → **Start**.
+3. **AltStore**: **⋮ → Install** → tu Apple ID → **Install**.
+
+### Opción C · TrollStore (instalación permanente)
+
+Si tu iPhone tiene iOS 16.0 – 16.6.1 o 17.0, instala TrollStore y añade el `.ipa`.
+Sin firmar y sin caducar.
 
 **Sobre la cuenta gratuita de Apple:** la app se instala y funciona igual, pero el
-"certificado de desarrollo" gratis dura 7 días. Pasados los 7 días, vuelve a pulsar ▶️ en
-Xcode y se reinstala (no pierdes nada: los datos están en el iPhone). Con la cuenta
-de pago (99 USD/año) el certificado dura 1 año.
+"certificado de desarrollo" gratis dura 7 días. Pasados los 7 días, vuelve a instalarla
+(un clic en SideStore). Con la cuenta de pago (99 USD/año) el certificado dura 1 año.
+
+### Opción D · Con Xcode en tu Mac
+
+Abre `Bodega.xcodeproj`, marca *Automatically manage signing*, elige tu cuenta de Apple,
+pon un *Bundle Identifier* único (`com.tunombre.bodega`) y pulsa ▶️.
 
 ---
 

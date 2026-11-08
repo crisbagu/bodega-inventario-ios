@@ -32,18 +32,25 @@
     box-shadow:0 10px 24px rgba(140,35,55,.3);
   }
   .boton.secundario{background:var(--superficie);color:var(--texto);border:2px solid var(--borde);box-shadow:none;margin-top:10px}
+  .boton.pequeno{font-size:16px;padding:14px 18px;border-radius:14px}
   .etiqueta{font-size:13px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--texto-suave);margin:34px 0 10px}
   .tarjeta{background:var(--superficie);border:1px solid var(--borde);border-radius:18px;padding:18px 20px;margin-bottom:12px}
   ol{margin:0;padding-left:22px}
   ol li{margin-bottom:10px}
   a{color:var(--vino)}
   .aviso{background:rgba(224,122,140,.12);border-left:4px solid var(--vino);border-radius:12px;padding:14px 16px;margin:18px 0;font-size:15px}
+  .aviso.neutro{background:rgba(110,95,88,.10);border-left-color:#6E5F58}
   .lista{list-style:none;padding:0;margin:0}
   .lista li{padding:12px 0;border-bottom:1px solid var(--borde);display:flex;gap:12px;align-items:flex-start}
   .lista li:last-child{border-bottom:0}
   .pill{font-size:26px}
   footer{color:var(--texto-suave);font-size:14px;text-align:center;margin-top:38px}
   .paso{font-weight:700}
+  code{background:rgba(110,95,88,.12);padding:2px 6px;border-radius:6px;font-size:14px;word-break:break-all}
+  .ruta{border:2px solid var(--vino);border-radius:18px;padding:18px 20px;margin-bottom:14px;background:var(--superficie)}
+  .ruta h3{margin:0 0 6px;font-size:19px}
+  .ruta p{margin:0 0 12px;color:var(--texto-suave);font-size:15px}
+  .marca{font-size:12px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--vino)}
 </style>
 </head>
 <body>
@@ -53,21 +60,62 @@
   <h1>Bodega</h1>
   <p class="sub">Inventario de entradas y salidas para tu bodega. Sin internet, sin cuentas y sin nube: todo vive en tu iPhone.</p>
 
-  <a class="boton" href="{{DESCARGA_IPA}}" download>⬇️  Instalar en el iPhone</a>
-  <a class="boton secundario" href="{{DESCARGA_IPA}}" download>💻  Instalar desde la Mac</a>
+  <a class="boton" href="{{DESCARGA_IPA}}" download>⬇️  Descargar la app (.ipa)</a>
+  <a class="boton secundario pequeno" href="https://apps.apple.com/us/app/sidestore/id1574933684" target="_blank" rel="noopener">🍏  Instalar SideStore (App Store)</a>
 
   <div class="aviso">
     ⏱️ La app se firma con tu cuenta de Apple <b>gratuita</b>: dura <b>7 días</b>.
     Después, un clic y vuelve a estar. (Con la cuenta de pago de Apple, dura 1 año.)
   </div>
 
-  <div class="etiqueta">En el iPhone</div>
+  <div class="etiqueta">En el iPhone · sin Mac y sin Xcode</div>
+
+  <div class="ruta">
+    <span class="marca">Ruta 1 · la más fácil</span>
+    <h3>SideStore</h3>
+    <p>SideStore instala y renueva la app solo en el iPhone. Ya tiene el enlace de descarga apuntando a nuestra app.</p>
+    <ol>
+      <li>Instala <b>SideStore</b> desde el App Store (botón de arriba).</li>
+      <li>Abre SideStore → <b>⋮</b> (arriba a la izquierda) → <b>Sources</b> → <b>Add Source</b>.</li>
+      <li>Pega esta dirección tal cual:<br><code>https://raw.githubusercontent.com/{{REPO}}/main/Sitio/fuente.json</code></li>
+      <li>Toca <b>Bodega</b> → <b>+</b> (añadir) → <b>Install</b>.</li>
+      <li>SideStore te pide tu Apple ID y un código de verificación. Listo: la app se instala sola.</li>
+    </ol>
+  </div>
+
+  <div class="ruta">
+    <span class="marca">Ruta 2</span>
+    <h3>E Sign o Scarlet</h3>
+    <p>Si ya usas una de estas apps para instalar cosas, también funcionan.</p>
+    <ol>
+      <li>Descarga el <a href="{{DESCARGA_IPA}}">archivo .ipa</a> (botón de arriba) y guárdalo en Archivos.</li>
+      <li>En E Sign / Scarlet: <b>Import</b> → elige el archivo → <b>Sign</b> con tu Apple ID.</li>
+      <li>Abre la app desde el icono que crea la propia app de firma.</li>
+    </ol>
+  </div>
+
+  <div class="ruta">
+    <span class="marca">Ruta 3</span>
+    <h3>TrollStore (si tu iPhone lo admite)</h3>
+    <p>Instalación permanente, sin firmar y sin caducar. Solo funciona en versiones de iOS antiguas (16.0 – 16.6.1 y 17.0).</p>
+    <ol>
+      <li>Instala TrollStore desde su sitio oficial (trollstore.com).</li>
+      <li>Abre TrollStore → <b>+</b> → elige el <a href="{{DESCARGA_IPA}}">.ipa</a> que descargaste.</li>
+      <li>Se instala y se queda. Sin 7 días, sin renovar.</li>
+    </ol>
+  </div>
+
+  <div class="aviso neutro">
+    📱 La primera vez, activa el <b>Modo desarrollador</b>: Ajustes → Privacidad y seguridad → Modo desarrollador.
+    En iOS 16 o superior, iOS te lo pide al abrir la app por primera vez.
+  </div>
+
+  <div class="etiqueta">O desde la Mac</div>
   <div class="tarjeta">
     <ol>
-      <li><span class="paso">Instala AltStore</span> (gratis, desde la App Store) o Sideloadly en la Mac.</li>
-      <li><span class="paso">Toca el botón de arriba</span> y guárdalo en Archivos.</li>
-      <li><span class="paso">En AltStore:</span> ⋮ <b>Install</b> → elige el archivo → escribe tu Apple ID → <b>Install</b>.</li>
-      <li><span class="paso">En Sideloadly:</span> arrastra el archivo a la ventana → tu Apple ID → <b>Start</b>.</li>
+      <li>Descarga el <a href="{{DESCARGA_IPA}}">archivo .ipa</a>.</li>
+      <li><b>Sideloadly</b> (gratis, Windows o Mac): arrastra el archivo → escribe tu Apple ID → <b>Start</b>.</li>
+      <li><b>AltStore</b> en la Mac: <b>⋮ → Install</b> → tu Apple ID → <b>Install</b>.</li>
     </ol>
   </div>
 
